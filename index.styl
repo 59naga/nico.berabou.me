@@ -1,0 +1,60 @@
+.logo
+  font-family Orbitron, sans-serif
+
+  position fixed
+  right 0
+  bottom .25em
+  right .25em
+  font-size 400%
+  z-index 5
+  opacity .4
+  height 1em
+  margin 0
+  
+  text-decoration none
+
+// fix md-theme
+body
+  *
+    color white
+.md-light-theme
+  md-dialog-content
+  .md-actions
+    *
+      color #333
+
+md-backdrop
+  position fixed
+
+md-menu-content
+  overflow hidden
+
+// avoid conflicts for md-tooltip and md-menu
+md-sidenav
+  z-index 1000
+main>md-backdrop
+  z-index 500!important
+.md-dialog-container
+  z-index 600
+
+.md-toolbar-tools
+  .md-button
+    overflow ellipsis
+
+.md-button
+  text-transform none
+
+  > img
+    width 100%  
+  span
+    overflow ellipsis
+
+// fix md-padding
+main
+  box-sizing-reset()
+  display block
+  height auto
+  min-height 100vh
+
+@import './app/*.styl'
+@import './top/*.styl'

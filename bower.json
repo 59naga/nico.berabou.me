@@ -1,0 +1,25 @@
+{
+  "name": "nico",
+  "private": true,
+  "dependencies": {
+    "nicovideo": "~0.0.6",
+    "angular-material": "~0.11.2",
+    "angular-ui-router": "~0.2.15",
+    "angular-loading-bar": "~0.8.0",
+    "angular-moment": "~0.10.3",
+    "countUp.js": "~1.6.0",
+    "animate.css": "~3.4.0",
+    "ngstorage": "~0.3.9",
+    "angular-loading-spinner": "~0.0.3",
+    "ngInfiniteScroll": "~1.2.1"
+  },
+  "overrides": {
+    "moment": {
+      "main": [
+        "moment.js",
+        "./locale/ja.js",
+        "./locale/en.js"
+      ]
+    }
+  }
+}

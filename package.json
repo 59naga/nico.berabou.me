@@ -1,0 +1,22 @@
+{
+  "name": "nico.berabou.me",
+  "private": true,
+  
+  "author": "59naga <i59naga@icloud.com> (http://berabou.me)",
+  "license": "MIT",
+
+  "main": "server.coffee",
+  "scripts": {
+    "start": "coffee server.coffee"
+  },
+  "dependencies": {
+    "bluebird": "^2.10.2",
+    "cheerio": "^0.19.0",
+    "difficult-http-server": "0.0.7",
+    "express": "^4.13.3",
+    "infinite-scroll": "0.0.0",
+    "lowdb": "^0.10.2",
+    "request": "^2.64.0",
+    "throat": "^2.0.2"
+  }
+}

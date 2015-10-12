@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no")
+    title(ng-bind="title + ' - #{process.env.APP}(α)'")= process.env.APP
+    
+    link(href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    
+    script(src=process.env.NODE_ENV=='production'? 'pkgs.min.js': 'pkgs.js')
+    script(src="index.js")
+    link(href="index.css" rel="stylesheet")
+
+  body(ng-cloak)
+    md-content
+      h1.logo
+        a(ui-sref="root.top({page:0})" ui-sref-opts="{reload:true}") nico.berabou.me
+
+      span(us-spinner="{radius:30, width:8, length: 16}")
+    
+      main(ui-view)

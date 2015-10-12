@@ -1,0 +1,52 @@
+.root
+  md-sidenav.md-dark-theme(
+    md-component-id='left'
+  )
+    md-toolbar
+      h1.md-toolbar-tools Setting
+    md-content(layout-padding layout-align="center center")
+      md-checkbox(
+        ng-repeat="(key,value) in $storage.services"
+        ng-model="$storage.services[key]" aria-label="{{key}}"
+      )
+        | {{key}}
+
+    md-toolbar
+      h1.md-toolbar-tools Fork me on github
+    md-content(layout-padding layout-align="center center")
+      md-button(ng-href="https://github.com/59naga/nico.berabou.me")
+        | 59naga/nico.berabou.me
+
+  md-content(layout-padding layout-fill)
+    md-toolbar.md-menu-toolbar
+      md-content(layout="row" layout-align="center center" layout-fill)
+        md-button.md-icon-button.md-fab(ng-click="root.toggle()" aria-label="sidemenu")
+          md-tooltip= process.env.APP
+          img(src="app_image.png" ng-aria="nicovideo.berabou.me")
+
+        md-menu-bar(flex layout="row")
+          md-menu(flex layout-fill)
+            button(ng-click="$mdOpenMenu()")
+              | {{title || "loading..."}}
+            md-menu-content
+              form(ng-submit="root.find()")
+                md-menu-item
+                  md-input-container
+                    input(ng-model="root.query" aria-label="nicovideo-querystring")
+                  md-button.md-raised.md-accent find
+          
+          md-menu.details
+            button(ng-click="$mdOpenMenu()")
+              span#countup.md-display-1 {{0}}
+              | found
+            md-menu-content
+              span(
+                ng-repeat="(service,data) in details"
+
+                layout="row"
+                layout-padding 
+              )
+                h3(flex) {{data.name}}
+                em {{data.total | number}}
+
+    ui-view

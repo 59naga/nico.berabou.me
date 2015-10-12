@@ -1,0 +1,46 @@
+md-dialog.preview(md-theme="light" aria-label='{{vm.title}}' ng-cloak)
+  form
+    md-toolbar
+      .md-toolbar-tools(layout="row")
+        md-button(
+          md-autofocus
+          href="{{vm.url}}"
+          target="_blank"
+        ) {{vm.title}}
+
+        span(flex)
+
+        md-button(ng-click='cancel()')
+          md-icon(aria-label='Close preview') close
+
+    md-dialog-content(style='max-width:800px;max-height:810px;')
+      md-button(ng-href="{{vm.url}}" target="_blank" aria-label="{{vm.title}}")
+        img(
+          fetch-thumbnail-url="vm"
+          fetch-thumbnail-type='src'
+        )
+      p {{vm.type}}
+      pre {{vm.description}}
+
+      nav
+        md-button.md-raised(
+          ng-repeat="tag in vm.tags track by $index"
+
+          ng-click="cancel()"
+          ui-sref="^.top({query:tag})"
+        )
+          | {{tag}}
+
+    .md-actions(layout='row' layout-align="end center")
+      span
+        span(am-time-ago="vm.start_time")
+      span(ng-hide="vm.view_counter==null") {{vm.view_counter}} view 
+      span(ng-hide="vm.mylist_counter==null") {{vm.mylist_counter}} mylist 
+      span(ng-show="vm.author") {{vm.author}}さん
+      span(ng-hide="vm.comment_counter==null")
+        | ／
+        | {{vm.comment_counter}} コメント
+        span(ng-hide="vm.last_comment_time==null || vm.last_comment_time=='1970-01-01 09:00:00' || vm.last_comment_time===false")
+          | （
+          span(am-time-ago="vm.last_comment_time")
+          | ）

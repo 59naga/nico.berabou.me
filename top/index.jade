@@ -1,0 +1,39 @@
+.top(
+  infinite-scroll="vm.next()"
+  infinite-scroll-distance="0"
+
+  ng-init="(items= vm.items | selectGenres)"
+)
+  md-grid-list(
+    md-row-height="1:1"
+    md-gutter-sm="1px"
+    md-gutter-md="3px"
+    md-gutter-lg="5px"
+    md-gutter="11px"
+
+    md-cols-sm="4"
+    md-cols-md="8"
+    md-cols-lg="12"
+    md-cols="16"
+  )
+    md-grid-tile.item(
+      ng-repeat="item in items"
+      
+      id="{{'item_'+item.cmsid}}"
+      ng-href="{{item.url}}"
+
+      md-rowspan="{{::vm.getScale($index,'huge')}}"
+      md-colspan="{{::vm.getScale($index,'huge')}}"
+      md-rowspan-lg="{{::vm.getScale($index,'large')}}"
+      md-colspan-lg="{{::vm.getScale($index,'large')}}"
+      md-rowspan-md="{{::vm.getScale($index,'medium')}}"
+      md-colspan-md="{{::vm.getScale($index,'medium')}}"
+      md-rowspan-sm="{{::vm.getScale($index,'small')}}"
+      md-colspan-sm="{{::vm.getScale($index,'small')}}"
+
+      md-ink-ripple
+      ng-click="vm.preview($event,item)"
+    )
+      style(fetch-thumbnail-url="item")
+      md-grid-tile-footer
+        h3 {{item.title}}

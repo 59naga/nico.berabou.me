@@ -1,0 +1,52 @@
+.top
+  >.md-menu-toolbar
+    z-index 10
+  
+  .item
+    cursor pointer
+    transition opacity .5s ease-out
+    
+    &::after
+      background-size cover
+      background-repeat no-repeat
+      background-position center
+      
+      background-image url('http://icon.nimg.jp/404.jpg')
+      content ""
+      absolute 0
+      z-index 1
+      
+      transition opacity .5s ease-out
+    &:hover
+      &::after
+        opacity .75
+    
+    md-grid-tile-footer
+      background-color rgba(0,0,0,.5)
+      transition opacity .5s ease-out
+      opacity 0
+      z-index 5
+    
+    &:hover
+      md-grid-tile-footer
+        opacity 1
+  
+  md-grid-tile
+    &.ng-enter-stagger
+    &.ng-leave-stagger
+    &.ng-move-stagger
+      animation-delay 30ms
+      animation-duration 0
+    &.ng-enter
+      animation fadeIn .5s
+    &.ng-leave
+      animation fadeOut .5s
+  
+    md-grid-tile-footer
+      box-sizing-reset()
+      
+      *
+        width 100%  
+      figcaption > *
+        padding-right 1em
+        overflow ellipsis
