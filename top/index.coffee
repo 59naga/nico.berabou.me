@@ -2,7 +2,7 @@
 app= angular.module process.env.APP
 
 # Private
-app.filter 'selectGenres',($rootScope)->
+app.filter 'selectedGenre',($rootScope)->
   (items)->
     services= (service for service,enable of $rootScope.$storage.services when enable)
 

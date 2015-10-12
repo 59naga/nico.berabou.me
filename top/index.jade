@@ -1,8 +1,6 @@
 .top(
   infinite-scroll="vm.next()"
   infinite-scroll-distance="0"
-
-  ng-init="(items= vm.items | selectGenres)"
 )
   md-grid-list(
     md-row-height="1:1"
@@ -17,7 +15,7 @@
     md-cols="16"
   )
     md-grid-tile.item(
-      ng-repeat="item in items"
+      ng-repeat="item in (vm.items | selectedGenre)"
       
       id="{{'item_'+item.cmsid}}"
       ng-href="{{item.url}}"
