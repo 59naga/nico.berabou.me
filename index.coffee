@@ -22,7 +22,7 @@ app.config ($stateProvider)->
   $stateProvider.state 'root',
     url: ''
 
-    template: require './app/root.jade'
+    template: (require './app/root.jade')()
     controller: 'root'
     controllerAs: 'root'
 
@@ -79,7 +79,7 @@ app.factory 'nicovideo',(Promise,$rootScope,$nicovideo,$sce)->
 app.config ($stateProvider)->
   $stateProvider.state 'root.top',
     url: '/:query?page'
-    template: (require './top/index.jade')
+    template: (require './top/index.jade')()
     controller: 'top'
     controllerAs: 'vm'
     resolve:

@@ -80,7 +80,7 @@ app.controller 'top',(
 
         return
 
-      template: require './preview.jade'
+      template: (require './preview.jade')()
 
       clickOutsideToClose: yes
       focusOnOpen: yes
