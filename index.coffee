@@ -1,6 +1,6 @@
 # Environment
 process.env.APP?= 'nico.berabou.me'
-STEP= 30
+STEP= 100
 
 # Boot
 angular.element document
