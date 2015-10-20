@@ -13,7 +13,7 @@ md-dialog.preview(md-theme="light" aria-label='{{vm.title}}' ng-cloak)
         md-button(ng-click='cancel()')
           md-icon(aria-label='Close preview') close
 
-    md-dialog-content(style='max-width:800px;max-height:810px;')
+    md-dialog-content(layout-padding style='max-width:800px;max-height:810px;')
       md-button(ng-href="{{vm.url}}" target="_blank" aria-label="{{vm.title}}")
         img(
           fetch-thumbnail-url="vm"

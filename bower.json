@@ -2,7 +2,7 @@
   "name": "nico",
   "private": true,
   "dependencies": {
-    "nicovideo": "~0.0.6",
+    "nicovideo": "~0.0.7",
     "angular-material": "~0.11.2",
     "angular-ui-router": "~0.2.15",
     "angular-loading-bar": "~0.8.0",
